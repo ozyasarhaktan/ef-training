@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbSinavOgrenciModelStoreContainer" CdmEntityContainer="DbSinavOgrenciEntities">
+    <EntitySetMapping Name="TBL_DERSLER">
+      <EntityTypeMapping TypeName="DbSinavOgrenciModel.TBL_DERSLER">
+        <MappingFragment StoreEntitySet="TBL_DERSLER">
+          <ScalarProperty Name="dersID" ColumnName="dersID" />
+          <ScalarProperty Name="dersAd" ColumnName="dersAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_NOTLAR">
+      <EntityTypeMapping TypeName="DbSinavOgrenciModel.TBL_NOTLAR">
+        <MappingFragment StoreEntitySet="TBL_NOTLAR">
+          <ScalarProperty Name="notID" ColumnName="notID" />
+          <ScalarProperty Name="ogrenci" ColumnName="ogrenci" />
+          <ScalarProperty Name="sinav1" ColumnName="sinav1" />
+          <ScalarProperty Name="sinav2" ColumnName="sinav2" />
+          <ScalarProperty Name="sinav3" ColumnName="sinav3" />
+          <ScalarProperty Name="ortalama" ColumnName="ortalama" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+          <ScalarProperty Name="ders" ColumnName="ders" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_OGRENCI">
+      <EntityTypeMapping TypeName="DbSinavOgrenciModel.TBL_OGRENCI">
+        <MappingFragment StoreEntitySet="TBL_OGRENCI">
+          <ScalarProperty Name="ogrenciID" ColumnName="ogrenciID" />
+          <ScalarProperty Name="ogrenciAd" ColumnName="ogrenciAd" />
+          <ScalarProperty Name="ogrenciSoyad" ColumnName="ogrenciSoyad" />
+          <ScalarProperty Name="ogrenciFotograf" ColumnName="ogrenciFotograf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_KULUPLER">
+      <EntityTypeMapping TypeName="DbSinavOgrenciModel.TBL_KULUPLER">
+        <MappingFragment StoreEntitySet="TBL_KULUPLER">
+          <ScalarProperty Name="kulupAd" ColumnName="kulupAd" />
+          <ScalarProperty Name="kulupID" ColumnName="kulupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="notListesi" FunctionName="DbSinavOgrenciModel.Store.notListesi">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbSinavOgrenciModel.notListesi_Result">
+          <ScalarProperty Name="notID" ColumnName="notID" />
+          <ScalarProperty Name="Ad_Soyad" ColumnName="Ad Soyad" />
+          <ScalarProperty Name="dersAd" ColumnName="dersAd" />
+          <ScalarProperty Name="sinav1" ColumnName="sinav1" />
+          <ScalarProperty Name="sinav2" ColumnName="sinav2" />
+          <ScalarProperty Name="sinav3" ColumnName="sinav3" />
+          <ScalarProperty Name="ortalama" ColumnName="ortalama" />
+          <ScalarProperty Name="durum" ColumnName="durum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbSinavOgrenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBL_DERSLER">
+    <Key>
+      <PropertyRef Name="dersID" />
+    </Key>
+    <Property Name="dersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dersAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_NOTLAR" Relationship="Self.FK_TBL_NOTLAR_TBL_DERSLER" FromRole="TBL_DERSLER" ToRole="TBL_NOTLAR" />
+  </EntityType>
+  <EntityType Name="TBL_NOTLAR">
+    <Key>
+      <PropertyRef Name="notID" />
+    </Key>
+    <Property Name="notID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenci" Type="Int32" />
+    <Property Name="sinav1" Type="Int16" />
+    <Property Name="sinav2" Type="Int16" />
+    <Property Name="sinav3" Type="Int16" />
+    <Property Name="ortalama" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="durum" Type="Boolean" />
+    <Property Name="ders" Type="Int32" />
+    <NavigationProperty Name="TBL_DERSLER" Relationship="Self.FK_TBL_NOTLAR_TBL_DERSLER" FromRole="TBL_NOTLAR" ToRole="TBL_DERSLER" />
+    <NavigationProperty Name="TBL_OGRENCI" Relationship="Self.FK_TBL_NOTLAR_TBL_OGRENCI" FromRole="TBL_NOTLAR" ToRole="TBL_OGRENCI" />
+  </EntityType>
+  <EntityType Name="TBL_OGRENCI">
+    <Key>
+      <PropertyRef Name="ogrenciID" />
+    </Key>
+    <Property Name="ogrenciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenciAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ogrenciSoyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ogrenciFotograf" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_NOTLAR" Relationship="Self.FK_TBL_NOTLAR_TBL_OGRENCI" FromRole="TBL_OGRENCI" ToRole="TBL_NOTLAR" />
+  </EntityType>
+  <Association Name="FK_TBL_NOTLAR_TBL_DERSLER">
+    <End Role="TBL_DERSLER" Type="Self.TBL_DERSLER" Multiplicity="0..1" />
+    <End Role="TBL_NOTLAR" Type="Self.TBL_NOTLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_DERSLER">
+        <PropertyRef Name="dersID" />
+      </Principal>
+      <Dependent Role="TBL_NOTLAR">
+        <PropertyRef Name="ders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_NOTLAR_TBL_OGRENCI">
+    <End Role="TBL_OGRENCI" Type="Self.TBL_OGRENCI" Multiplicity="0..1" />
+    <End Role="TBL_NOTLAR" Type="Self.TBL_NOTLAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_OGRENCI">
+        <PropertyRef Name="ogrenciID" />
+      </Principal>
+      <Dependent Role="TBL_NOTLAR">
+        <PropertyRef Name="ogrenci" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbSinavOgrenciEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBL_DERSLER" EntityType="Self.TBL_DERSLER" />
+    <EntitySet Name="TBL_NOTLAR" EntityType="Self.TBL_NOTLAR" />
+    <EntitySet Name="TBL_OGRENCI" EntityType="Self.TBL_OGRENCI" />
+    <AssociationSet Name="FK_TBL_NOTLAR_TBL_DERSLER" Association="Self.FK_TBL_NOTLAR_TBL_DERSLER">
+      <End Role="TBL_DERSLER" EntitySet="TBL_DERSLER" />
+      <End Role="TBL_NOTLAR" EntitySet="TBL_NOTLAR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_NOTLAR_TBL_OGRENCI" Association="Self.FK_TBL_NOTLAR_TBL_OGRENCI">
+      <End Role="TBL_OGRENCI" EntitySet="TBL_OGRENCI" />
+      <End Role="TBL_NOTLAR" EntitySet="TBL_NOTLAR" />
+    </AssociationSet>
+    <EntitySet Name="TBL_KULUPLER" EntityType="DbSinavOgrenciModel.TBL_KULUPLER" />
+    <FunctionImport Name="notListesi" ReturnType="Collection(DbSinavOgrenciModel.notListesi_Result)" />
+  </EntityContainer>
+  <EntityType Name="TBL_KULUPLER">
+    <Key>
+      <PropertyRef Name="kulupID" />
+    </Key>
+    <Property Name="kulupID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kulupAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="notListesi_Result">
+    <Property Type="Int32" Name="notID" Nullable="false" />
+    <Property Type="String" Name="Ad_Soyad" Nullable="true" MaxLength="61" />
+    <Property Type="String" Name="dersAd" Nullable="true" MaxLength="30" />
+    <Property Type="Int16" Name="sinav1" Nullable="true" />
+    <Property Type="Int16" Name="sinav2" Nullable="true" />
+    <Property Type="Int16" Name="sinav3" Nullable="true" />
+    <Property Type="Decimal" Name="ortalama" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Boolean" Name="durum" Nullable="true" />
+  </ComplexType>
+</Schema>
