@@ -70,6 +70,10 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -162,7 +166,7 @@
             this.lblID.Location = new System.Drawing.Point(67, 44);
             this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(50, 28);
+            this.lblID.Size = new System.Drawing.Size(42, 23);
             this.lblID.TabIndex = 6;
             this.lblID.Text = "ID :";
             this.lblID.Click += new System.EventHandler(this.lblID_Click);
@@ -172,7 +176,7 @@
             this.txtOgrenciID.Location = new System.Drawing.Point(103, 41);
             this.txtOgrenciID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOgrenciID.Name = "txtOgrenciID";
-            this.txtOgrenciID.Size = new System.Drawing.Size(162, 30);
+            this.txtOgrenciID.Size = new System.Drawing.Size(162, 26);
             this.txtOgrenciID.TabIndex = 7;
             this.txtOgrenciID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -181,7 +185,7 @@
             this.txtOgrenciAd.Location = new System.Drawing.Point(103, 86);
             this.txtOgrenciAd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOgrenciAd.Name = "txtOgrenciAd";
-            this.txtOgrenciAd.Size = new System.Drawing.Size(162, 30);
+            this.txtOgrenciAd.Size = new System.Drawing.Size(162, 26);
             this.txtOgrenciAd.TabIndex = 9;
             this.txtOgrenciAd.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -192,7 +196,7 @@
             this.label1.Location = new System.Drawing.Point(60, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 28);
+            this.label1.Size = new System.Drawing.Size(51, 23);
             this.label1.TabIndex = 8;
             this.label1.Text = "AD :";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -202,7 +206,7 @@
             this.txtOgrenciSoyad.Location = new System.Drawing.Point(103, 135);
             this.txtOgrenciSoyad.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOgrenciSoyad.Name = "txtOgrenciSoyad";
-            this.txtOgrenciSoyad.Size = new System.Drawing.Size(162, 30);
+            this.txtOgrenciSoyad.Size = new System.Drawing.Size(162, 26);
             this.txtOgrenciSoyad.TabIndex = 11;
             this.txtOgrenciSoyad.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -213,7 +217,7 @@
             this.label2.Location = new System.Drawing.Point(31, 137);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 28);
+            this.label2.Size = new System.Drawing.Size(90, 23);
             this.label2.TabIndex = 10;
             this.label2.Text = "SOYAD :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -223,7 +227,7 @@
             this.txtOgrenciFotograf.Location = new System.Drawing.Point(103, 184);
             this.txtOgrenciFotograf.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOgrenciFotograf.Name = "txtOgrenciFotograf";
-            this.txtOgrenciFotograf.Size = new System.Drawing.Size(162, 30);
+            this.txtOgrenciFotograf.Size = new System.Drawing.Size(162, 26);
             this.txtOgrenciFotograf.TabIndex = 13;
             this.txtOgrenciFotograf.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -234,7 +238,7 @@
             this.label3.Location = new System.Drawing.Point(2, 186);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 28);
+            this.label3.Size = new System.Drawing.Size(128, 23);
             this.label3.TabIndex = 12;
             this.label3.Text = "FOTOGRAF :";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -294,7 +298,7 @@
             this.label4.Location = new System.Drawing.Point(67, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 28);
+            this.label4.Size = new System.Drawing.Size(42, 23);
             this.label4.TabIndex = 6;
             this.label4.Text = "ID :";
             // 
@@ -303,7 +307,7 @@
             this.txtDersID.Location = new System.Drawing.Point(103, 41);
             this.txtDersID.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDersID.Name = "txtDersID";
-            this.txtDersID.Size = new System.Drawing.Size(162, 30);
+            this.txtDersID.Size = new System.Drawing.Size(162, 26);
             this.txtDersID.TabIndex = 7;
             // 
             // label6
@@ -313,7 +317,7 @@
             this.label6.Location = new System.Drawing.Point(60, 89);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 28);
+            this.label6.Size = new System.Drawing.Size(51, 23);
             this.label6.TabIndex = 8;
             this.label6.Text = "AD :";
             // 
@@ -322,7 +326,7 @@
             this.txtDersAd.Location = new System.Drawing.Point(103, 86);
             this.txtDersAd.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDersAd.Name = "txtDersAd";
-            this.txtDersAd.Size = new System.Drawing.Size(162, 30);
+            this.txtDersAd.Size = new System.Drawing.Size(162, 26);
             this.txtDersAd.TabIndex = 9;
             // 
             // groupBox3
@@ -391,7 +395,7 @@
             this.txtDurum.Location = new System.Drawing.Point(422, 109);
             this.txtDurum.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtDurum.Name = "txtDurum";
-            this.txtDurum.Size = new System.Drawing.Size(162, 30);
+            this.txtDurum.Size = new System.Drawing.Size(162, 26);
             this.txtDurum.TabIndex = 15;
             // 
             // label10
@@ -401,7 +405,7 @@
             this.label10.Location = new System.Drawing.Point(344, 111);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 28);
+            this.label10.Size = new System.Drawing.Size(92, 23);
             this.label10.TabIndex = 14;
             this.label10.Text = "DURUM :";
             this.label10.Click += new System.EventHandler(this.label10_Click);
@@ -413,7 +417,7 @@
             this.label5.Location = new System.Drawing.Point(19, 44);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 28);
+            this.label5.Size = new System.Drawing.Size(99, 23);
             this.label5.TabIndex = 6;
             this.label5.Text = "SINAV 1 :";
             // 
@@ -422,7 +426,7 @@
             this.txtOrtalama.Location = new System.Drawing.Point(422, 66);
             this.txtOrtalama.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtOrtalama.Name = "txtOrtalama";
-            this.txtOrtalama.Size = new System.Drawing.Size(162, 30);
+            this.txtOrtalama.Size = new System.Drawing.Size(162, 26);
             this.txtOrtalama.TabIndex = 13;
             // 
             // txtSinav1
@@ -430,7 +434,7 @@
             this.txtSinav1.Location = new System.Drawing.Point(103, 41);
             this.txtSinav1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSinav1.Name = "txtSinav1";
-            this.txtSinav1.Size = new System.Drawing.Size(162, 30);
+            this.txtSinav1.Size = new System.Drawing.Size(162, 26);
             this.txtSinav1.TabIndex = 7;
             // 
             // label7
@@ -440,7 +444,7 @@
             this.label7.Location = new System.Drawing.Point(287, 69);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 28);
+            this.label7.Size = new System.Drawing.Size(131, 23);
             this.label7.TabIndex = 12;
             this.label7.Text = "ORTALAMA :";
             // 
@@ -451,7 +455,7 @@
             this.label8.Location = new System.Drawing.Point(19, 89);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 28);
+            this.label8.Size = new System.Drawing.Size(99, 23);
             this.label8.TabIndex = 8;
             this.label8.Text = "SINAV 2 :";
             // 
@@ -460,7 +464,7 @@
             this.txtSinav3.Location = new System.Drawing.Point(103, 131);
             this.txtSinav3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSinav3.Name = "txtSinav3";
-            this.txtSinav3.Size = new System.Drawing.Size(162, 30);
+            this.txtSinav3.Size = new System.Drawing.Size(162, 26);
             this.txtSinav3.TabIndex = 11;
             // 
             // txtSinav2
@@ -468,7 +472,7 @@
             this.txtSinav2.Location = new System.Drawing.Point(103, 86);
             this.txtSinav2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txtSinav2.Name = "txtSinav2";
-            this.txtSinav2.Size = new System.Drawing.Size(162, 30);
+            this.txtSinav2.Size = new System.Drawing.Size(162, 26);
             this.txtSinav2.TabIndex = 9;
             // 
             // label9
@@ -478,7 +482,7 @@
             this.label9.Location = new System.Drawing.Point(19, 134);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 28);
+            this.label9.Size = new System.Drawing.Size(99, 23);
             this.label9.TabIndex = 10;
             this.label9.Text = "SINAV 3 :";
             // 
@@ -513,7 +517,7 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(893, 53);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(239, 25);
+            this.radioButton1.Size = new System.Drawing.Size(198, 24);
             this.radioButton1.TabIndex = 19;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Ada Göre Sırala [a--> z]";
@@ -534,7 +538,7 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(893, 110);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(239, 25);
+            this.radioButton2.Size = new System.Drawing.Size(198, 24);
             this.radioButton2.TabIndex = 21;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Ada Göre Sırala [z--> a]";
@@ -545,7 +549,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(893, 168);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(120, 25);
+            this.radioButton3.Size = new System.Drawing.Size(98, 24);
             this.radioButton3.TabIndex = 22;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "İlk 3 kAYIT";
@@ -556,17 +560,65 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(893, 232);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(247, 30);
+            this.radioButton4.Size = new System.Drawing.Size(175, 24);
             this.radioButton4.TabIndex = 23;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "ID\'ye göre veri getir";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(893, 281);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(183, 24);
+            this.radioButton5.TabIndex = 24;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Adı \'A\' ile başlayanlar";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(893, 331);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(154, 24);
+            this.radioButton6.TabIndex = 25;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Adı \'A\' ile bitenler";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(893, 377);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(137, 24);
+            this.radioButton7.TabIndex = 26;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "Değer Var Mı?";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(893, 423);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(117, 24);
+            this.radioButton8.TabIndex = 27;
+            this.radioButton8.TabStop = true;
+            this.radioButton8.Text = "Değer Sayısı";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 772);
+            this.Controls.Add(this.radioButton8);
+            this.Controls.Add(this.radioButton7);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton5);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -643,6 +695,10 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
+        private System.Windows.Forms.RadioButton radioButton8;
     }
 }
 

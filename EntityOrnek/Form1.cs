@@ -167,11 +167,13 @@ namespace EntityOrnek
         {
             if (radioButton1.Checked == true)
             {
+                // ASC sıralanmış listenin elemanları
                 List<TBL_OGRENCI> liste1 = db.TBL_OGRENCI.OrderBy(x => x.ogrenciAd).ToList();
                 dataGridView1.DataSource = liste1;
             }
             if (radioButton2.Checked == true)
             {
+                // DESC sıralanmış listenin elemanları
                 List<TBL_OGRENCI> liste2 = db.TBL_OGRENCI.OrderByDescending(x => x.ogrenciAd).ToList();
                 dataGridView1.DataSource = liste2;
             }
@@ -183,9 +185,48 @@ namespace EntityOrnek
             }
             if (radioButton4.Checked == true)
             {
+                // ID'ye göre veri getirme
                 //  .As.Enumerable koymamın sebebi dışarıdaki textten aldığım ifadeyi int'e çevirmemesiydi.
-                List<TBL_OGRENCI> liste4 = db.TBL_OGRENCI.AsEnumerable().Where(p=>p.ogrenciID == int.Parse(txtOgrenciID.Text)).ToList();
+                List<TBL_OGRENCI> liste4 = db.TBL_OGRENCI.AsEnumerable().Where(p => p.ogrenciID == int.Parse(txtOgrenciID.Text)).ToList();
                 dataGridView1.DataSource = liste4;
+            }
+            if (radioButton5.Checked == true)
+            {
+                // A ile başlayanlar
+                List<TBL_OGRENCI> liste5 = db.TBL_OGRENCI.Where(p => p.ogrenciAd.StartsWith("a")).ToList();
+                dataGridView1.DataSource = liste5;
+            }
+            if (radioButton6.Checked == true)
+            {
+                // A ile bitenler
+                List<TBL_OGRENCI> liste6 = db.TBL_OGRENCI.Where(p => p.ogrenciAd.EndsWith("a")).ToList();
+                dataGridView1.DataSource = liste6;
+            }
+            if (radioButton7.Checked == true)
+            {
+                //DEĞER KONTROLÜ
+                bool deger = db.TBL_KULUPLER.Any();
+                if(deger == true) {
+                MessageBox.Show(deger.ToString(),"Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(deger.ToString(),"Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+            }            
+            if (radioButton8.Checked == true)
+            {
+                //DEĞER VARSA ÖĞRENCİ SAYISI
+                bool deger = db.TBL_OGRENCI.Any();
+                int sayi = 0;
+                if(deger == true) {
+                    sayi = db.TBL_OGRENCI.Count();
+                    MessageBox.Show(sayi + " öğrenci var.","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(0 + " öğrenci var.", "Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
             }
 
         }
