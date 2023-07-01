@@ -96,17 +96,34 @@ namespace EntityOrnek
 
         private void btnNotListesi_Click(object sender, EventArgs e)
         {
+            //var query = from item in db.TBL_NOTLAR
+            //            select new
+            //            {
+            //                item.notID,
+            //                item.ogrenci,
+            //                item.ders,
+            //                item.sinav1,
+            //                item.sinav2,
+            //                item.sinav3,
+            //                item.ortalama,
+            //                item.durum
+            //            };
+
+            //yukarıdaki yerine join kullanmadan öğrenciID yerine Öğrenci ad ve soyadı ; dersID yerine ise ders adı getirebiliriz
+
             var query = from item in db.TBL_NOTLAR
                         select new
                         {
                             item.notID,
-                            item.ogrenci,
-                            item.ders,
+                            Ad_Soyad = item.TBL_OGRENCI.ogrenciAd + " " + item.TBL_OGRENCI.ogrenciSoyad,
+                            Ders_Adi = item.TBL_DERSLER.dersAd,
                             item.sinav1,
                             item.sinav2,
                             item.sinav3,
                             item.ortalama,
                             item.durum
+
+
                         };
             dataGridView1.DataSource = query.ToList();
             //dataGridView1.DataSource = db.TBL_NOTLAR.ToList();
@@ -206,30 +223,115 @@ namespace EntityOrnek
             {
                 //DEĞER KONTROLÜ
                 bool deger = db.TBL_KULUPLER.Any();
-                if(deger == true) {
-                MessageBox.Show(deger.ToString(),"Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (deger == true)
+                {
+                    MessageBox.Show(deger.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(deger.ToString(),"Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show(deger.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }            
+            }
             if (radioButton8.Checked == true)
             {
                 //DEĞER VARSA ÖĞRENCİ SAYISI
                 bool deger = db.TBL_OGRENCI.Any();
                 int sayi = 0;
-                if(deger == true) {
+                if (deger == true)
+                {
                     sayi = db.TBL_OGRENCI.Count();
-                    MessageBox.Show(sayi + " öğrenci var.","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(sayi + " öğrenci var.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(0 + " öğrenci var.", "Bilgi", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show(0 + " öğrenci var.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            if (radioButton9.Checked == true)
+            {
+                //TOPLAM SINAV 1 puanı
+                //int toplam = db.TBL_NOTLAR.Sum(p => p.sinav1).Value;
+                //MessageBox.Show("Toplam Sınav1 puanı : " + toplam);
+                //onun yerine aşağıdaki gibi yapılabilir :
+                var toplam = db.TBL_NOTLAR.Sum(p => p.sinav1);
+                MessageBox.Show("Toplam Sınav1 puanı : " + toplam.ToString());
+            }
+            if (radioButton10.Checked == true)
+            {
+                //ortalama SINAV 1 puanı
+                double ortalama = db.TBL_NOTLAR.Average(p => p.sinav1).Value;
+                MessageBox.Show("Ortalama Sınav1 puanı : " + ortalama);
+
+                //onun yerine aşağıdaki gibi yapılabilir :
+
+                //var toplam = db.TBL_NOTLAR.Average(p => p.sinav1);
+                //MessageBox.Show("Ortalama Sınav1 puanı : " + toplam.ToString());
+            }
+            if (radioButton11.Checked == true)
+            {
+                //sınav1 notu ortalamasından yüksek olan verileri getir 
+                double ortalama = db.TBL_NOTLAR.Average(p => p.sinav1).Value;
+                List<TBL_NOTLAR> liste6 = db.TBL_NOTLAR.Where(p => p.sinav1 > ortalama).ToList();
+                dataGridView1.DataSource = liste6;
+                MessageBox.Show("Ortalama Sınav1 puanı : " + ortalama);
+            }
+            if (radioButton12.Checked == true)
+            {
+                //sınav1 notu en yüksek olan sınav1 i getir
+                int enYuksek = db.TBL_NOTLAR.Max(p => p.sinav1).Value;
+                //dataGridView1.DataSource = db.TBL_NOTLAR.Where(p=> p.sinav1 == enYuksek).ToList();
+
+                //yukarıdaki yerine ağaşıdaki de yapılabilir
+
+                var query = from item in db.TBL_NOTLAR
+                            where item.sinav1 == enYuksek
+                            select new
+                            {
+                                item.TBL_OGRENCI.ogrenciAd,
+                                item.sinav1
+                            };
+                dataGridView1.DataSource = query.ToList();
+            }
+            if (radioButton13.Checked == true)
+            {
+                //sınav1 notu en düşük olan sınav1 i getir
+                int enDusuk = db.TBL_NOTLAR.Min(p => p.sinav1).Value;
+                //dataGridView1.DataSource = db.TBL_NOTLAR.Where(p=> p.sinav1 == enDusuk).ToList();
+
+                //yukarıdaki yerine ağaşıdaki de yapılabilir
+
+                var query = from item in db.TBL_NOTLAR
+                            where item.sinav1 == enDusuk
+                            select new
+                            {
+                                item.TBL_OGRENCI.ogrenciAd,
+                                item.sinav1
+                            };
+                dataGridView1.DataSource = query.ToList();
             }
 
         }
 
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
+            var sorgu = from d1 in db.TBL_NOTLAR
+                        join d2 in db.TBL_OGRENCI
+                        on d1.ogrenci equals d2.ogrenciID
+                        join d3 in db.TBL_DERSLER
+                        on d1.ders equals d3.dersID
+                        where d1.sinav2.HasValue
+                        select new
+                        {
+                            ÖĞRENCİ = d2.ogrenciAd + " " + d2.ogrenciSoyad,
+                            d3.dersAd,
+                            Sınav_1 = d1.sinav1,
+                            Sınav_2 = d1.sinav2,
+                            Sınav_3 = d1.sinav3,
+                            Ortalama = d1.ortalama
+                        };
+            yukarıda sınav2 boş olmayan değerleri yazdırdım
+            dataGridView1.DataSource = sorgu.ToList();
+
+        }
     }
 }

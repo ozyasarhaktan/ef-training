@@ -51,7 +51,7 @@
             this.txtDersAd = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnProc = new System.Windows.Forms.Button();
-            this.btnNotGuncelle = new System.Windows.Forms.Button();
+            this.btnJoin = new System.Windows.Forms.Button();
             this.btnHesapla = new System.Windows.Forms.Button();
             this.txtDurum = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,6 +74,11 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -332,7 +337,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnProc);
-            this.groupBox3.Controls.Add(this.btnNotGuncelle);
+            this.groupBox3.Controls.Add(this.btnJoin);
             this.groupBox3.Controls.Add(this.btnHesapla);
             this.groupBox3.Controls.Add(this.txtDurum);
             this.groupBox3.Controls.Add(this.label10);
@@ -357,26 +362,27 @@
             // 
             this.btnProc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnProc.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnProc.Location = new System.Drawing.Point(15, 178);
+            this.btnProc.Location = new System.Drawing.Point(14, 178);
             this.btnProc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProc.Name = "btnProc";
-            this.btnProc.Size = new System.Drawing.Size(204, 43);
+            this.btnProc.Size = new System.Drawing.Size(231, 43);
             this.btnProc.TabIndex = 19;
-            this.btnProc.Text = "Prodecure";
+            this.btnProc.Text = "Not Listesi Prodecure";
             this.btnProc.UseVisualStyleBackColor = true;
             this.btnProc.Click += new System.EventHandler(this.btnProc_Click);
             // 
-            // btnNotGuncelle
+            // btnJoin
             // 
-            this.btnNotGuncelle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnNotGuncelle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnNotGuncelle.Location = new System.Drawing.Point(454, 151);
-            this.btnNotGuncelle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnNotGuncelle.Name = "btnNotGuncelle";
-            this.btnNotGuncelle.Size = new System.Drawing.Size(130, 59);
-            this.btnNotGuncelle.TabIndex = 20;
-            this.btnNotGuncelle.Text = "Sınav Notu Güncelle";
-            this.btnNotGuncelle.UseVisualStyleBackColor = true;
+            this.btnJoin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnJoin.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnJoin.Location = new System.Drawing.Point(454, 151);
+            this.btnJoin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnJoin.Name = "btnJoin";
+            this.btnJoin.Size = new System.Drawing.Size(130, 59);
+            this.btnJoin.TabIndex = 20;
+            this.btnJoin.Text = "Not Listesi Join";
+            this.btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // btnHesapla
             // 
@@ -525,7 +531,7 @@
             // 
             // btnLinqEntity
             // 
-            this.btnLinqEntity.Location = new System.Drawing.Point(906, 555);
+            this.btnLinqEntity.Location = new System.Drawing.Point(880, 679);
             this.btnLinqEntity.Name = "btnLinqEntity";
             this.btnLinqEntity.Size = new System.Drawing.Size(226, 74);
             this.btnLinqEntity.TabIndex = 20;
@@ -610,11 +616,74 @@
             this.radioButton8.Text = "Değer Sayısı";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
+            // radioButton9
+            // 
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(893, 467);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(177, 24);
+            this.radioButton9.TabIndex = 28;
+            this.radioButton9.TabStop = true;
+            this.radioButton9.Text = "Sınav 1 Toplam Puan";
+            this.radioButton9.UseVisualStyleBackColor = true;
+            // 
+            // radioButton10
+            // 
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(893, 507);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(195, 24);
+            this.radioButton10.TabIndex = 29;
+            this.radioButton10.TabStop = true;
+            this.radioButton10.Text = "Sınav 1 Ortalama Puan";
+            this.radioButton10.UseVisualStyleBackColor = true;
+            // 
+            // radioButton11
+            // 
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(715, 540);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(438, 24);
+            this.radioButton11.TabIndex = 30;
+            this.radioButton11.TabStop = true;
+            this.radioButton11.Text = "Sınav 1 Puanı Ortalama Puandan Yüksek olan kişileri getir";
+            this.radioButton11.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.radioButton11.UseVisualStyleBackColor = true;
+            // 
+            // radioButton12
+            // 
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(893, 577);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(154, 24);
+            this.radioButton12.TabIndex = 31;
+            this.radioButton12.TabStop = true;
+            this.radioButton12.Text = "En yüksek sınav 1";
+            this.radioButton12.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.radioButton12.UseVisualStyleBackColor = true;
+            // 
+            // radioButton13
+            // 
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(893, 622);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(147, 24);
+            this.radioButton13.TabIndex = 32;
+            this.radioButton13.TabStop = true;
+            this.radioButton13.Text = "En düşük sınav 1";
+            this.radioButton13.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.radioButton13.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 772);
+            this.Controls.Add(this.radioButton13);
+            this.Controls.Add(this.radioButton12);
+            this.Controls.Add(this.radioButton11);
+            this.Controls.Add(this.radioButton10);
+            this.Controls.Add(this.radioButton9);
             this.Controls.Add(this.radioButton8);
             this.Controls.Add(this.radioButton7);
             this.Controls.Add(this.radioButton6);
@@ -686,7 +755,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnDersListesi;
         private System.Windows.Forms.Button btnNotListesi;
-        private System.Windows.Forms.Button btnNotGuncelle;
+        private System.Windows.Forms.Button btnJoin;
         private System.Windows.Forms.Button btnHesapla;
         private System.Windows.Forms.Button btnDersEkle;
         private System.Windows.Forms.Button btnProc;
@@ -699,6 +768,11 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton8;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton13;
     }
 }
 
